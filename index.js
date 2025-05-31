@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
     res.send('API is running.....');
 });
 
+
+const transactionRoutes = require('./routes/transaction.route');
+app.use('/api/transactions', transactionRoutes);
+
 //start sever
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
