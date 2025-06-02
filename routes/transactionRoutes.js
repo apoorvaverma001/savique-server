@@ -1,13 +1,13 @@
 const express = require('express');
-const protect = require('../middlewares/authMiddleware');
+const router = express.Router();
+const { protect } = require('../middlewares/authMiddleware');
 const {
     addTransaction,
     getTransactions,
     updateTransaction,
     deleteTransaction
-} = require('../controllers/authController');
+} = require('../controllers/transactionController');
 
-const router = express.Router();
 
 router.post('/', protect, addTransaction);
 router.get('/', protect, getTransactions);
